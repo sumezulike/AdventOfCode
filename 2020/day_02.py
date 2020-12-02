@@ -1004,15 +1004,16 @@ def parse_passwords() -> list:
 
 def part_1():
     passwords = parse_passwords()
-    print(passwords)
     valid = [p["password"] for p in passwords if p["min"] <= p["password"].count(p["letter"]) <= p["max"]]
     print(len(valid))
 
 def part_2():
     passwords = parse_passwords()
-    print(passwords)
     valid = [p["password"] for p in passwords if (p["password"][p["min"]-1] + p["password"][p["max"]-1]).count(p["letter"]) == 1]
     print(len(valid))
 
 if __name__ == '__main__':
+    print("Part 1:")
+    part_1()
+    print("Part 2:")
     part_2()
