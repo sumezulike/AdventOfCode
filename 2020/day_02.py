@@ -1,4 +1,4 @@
-from .puzzles import day2 as puzzle
+from puzzles import day2 as puzzle
 
 def parse_passwords() -> list:
     return [{"min": int(a.split("-")[0]), "max": int(a.split("-")[1]), "letter": b[0], "password": c} for a, b, c in [line.split() for line in puzzle.split("\n")]]

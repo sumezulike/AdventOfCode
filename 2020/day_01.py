@@ -1,4 +1,4 @@
-from .puzzles import day1 as puzzle
+from puzzles import day1 as puzzle
 
 puzzle = [int(x) for x in puzzle.split("\n")]
 
