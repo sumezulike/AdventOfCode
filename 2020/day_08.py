@@ -2,31 +2,67 @@ from puzzles import day8 as puzzle
 
 
 def test():
-    process_code()
+    p = Processor()
+    p.process_code(puzzle)
 
 
-def process_code(code: str = puzzle) -> tuple[bool, int]:
-    code = code.split("\n")
-    ip = 0
-    acc = 0
-    history = set()
-    while True:
-        if ip >= len(code):
-            return True, acc
-        if ip in history:
-            return False, acc
+class Processor:
+
+    def __init__(self):
+        self.ip = 0
+        self.acc = 0
+        self.history = set()
+        self.code = []
+
+        self.code_table = {
+            "nop": self.__nop,
+            "acc": self.__acc,
+            "jmp": self.__jmp
+        }
+
+
+    def reset(self, code):
+        self.ip = 0
+        self.acc = 0
+        self.history = set()
+        self.code = code.split("\n")
+
+
+    def __acc(self, _param):
+        self.acc += int(_param)
+        self.ip += 1
+
+
+    def __nop(self, _param):
+        self.ip += 1
+
+
+    def __jmp(self, _param):
+        self.ip += int(_param)
+
+
+    def __unkn(self, *args, **kwargs):
+        raise Exception(f"Unknown instruction: '{self.code[self.ip]}', {args, kwargs}")
+
+
+    def process_code(self, code: str = puzzle) -> tuple[bool, int]:
+        self.reset(code)
+        while self.ip not in self.history:
+            if self.ip >= len(self.code):
+                return True, self.acc
+            self.history.add(self.ip)
+            self.process_next_instruction()
+        return False, self.acc
+
+
+    def process_next_instruction(self):
+        instr, param = self.code[self.ip].split(" ", 1)
+        func = self.code_table.get(instr)
+        if func:
+            # noinspection PyArgumentList
+            func(param)
         else:
-            history.add(ip)
-        instr, param = code[ip].split()
-        if instr == "nop":
-            ip += 1
-        elif instr == "acc":
-            acc += int(param)
-            ip += 1
-        elif instr == "jmp":
-            ip += int(param)
-        else:
-            raise Exception(f"Unknown instruction: {instr}")
+            self.__unkn()
 
 
 def bruteforce_code_changes(find, sub, code=puzzle):
@@ -38,16 +74,19 @@ def bruteforce_code_changes(find, sub, code=puzzle):
 
 
 def part_1() -> str:
-    return str(process_code()[1])
+    p = Processor()
+    _, res = p.process_code(puzzle)
+    return str(res)
 
 
 def part_2() -> str:
+    p = Processor()
     for code in bruteforce_code_changes("nop", "jmp", code=puzzle):
-        term, res = process_code(code)
+        term, res = p.process_code(code)
         if term:
             return str(res)
     for code in bruteforce_code_changes("jmp", "nop", code=puzzle):
-        term, res = process_code(code)
+        term, res = p.process_code(code)
         if term:
             return str(res)
 
