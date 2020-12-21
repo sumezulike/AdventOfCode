@@ -9,23 +9,26 @@ def parse_rules(rules: str) -> dict[int, str]:
 def get_regex(rules: dict[int, str], rule_num: int = 0) -> str:
     regex = ""
     rule = rules[rule_num]
-    if "|" in rule:
-        l, r = rule.split("|", 1)
-        l, r = [int(i) for i in l.split()], [int(i) for i in r.split()]
-        regex += "("
-        for i in l:
-            regex += get_regex(rules, i)
-        regex += "|"
-        for i in r:
-            regex += get_regex(rules, i)
-        regex += ")"
-    elif '"' in rule:
-        regex += rule.replace('"', "")
-    else:
-        nums = [int(i) for i in rule.split()]
-        for i in nums:
-            regex += get_regex(rules, i)
-    return regex
+    try:
+        if "|" in rule:
+            l, r = rule.split("|", 1)
+            l, r = [int(i) for i in l.split()], [int(i) for i in r.split()]
+            regex += "("
+            for i in l:
+                regex += get_regex(rules, i)
+            regex += "|"
+            for i in r:
+                regex += get_regex(rules, i)
+            regex += ")"
+        elif '"' in rule:
+            regex += rule.replace('"', "")
+        else:
+            nums = [int(i) for i in rule.split()]
+            for i in nums:
+                regex += get_regex(rules, i)
+        return regex
+    except RecursionError:
+        return ""
 
 def test():
     tests = """0: 4 1 5
