@@ -12222,3 +12222,57 @@ pnnfccs psjq fbvsh ljpv rthjg mrjp rfccb bjgjgb bjr rjdqt dknbxb msth xlgpb kmpv
 hfffm vblsdx rbxklnd svvd cxnfh smmxhs mskn fxlb rjjp mglxvr dvkmm zfcvkg sljnxj grlqdjv zqtd xsjjq djlrc rczt zfdfjl dnzmt xdpvd trlx tsrpk xhdf mfvqxv blccjb sd zxxds prtnk gzmt klt kkkb kns vpzxk dknbxb pnnfccs sqkhm vzpntm gzlm hdcj thd qfzv grndv lchcf pgdqzn bdt ppsnc jxspzl tjtgbf nrz jspkl lskl vdj dgxrzglk grnv kxdb sdjd cvzqq bkgmcsx clnkzp bbbhk mqcbh cdvjskn vndnsd hbnf kgx dzrdddm kpvft lrxrmf xlgpb tkrtrr kjrk zrmddmt (contains dairy, fish, peanuts)
 vnml hdcj dmldz zgkg dvkmm tgkgzqj kxdb bkgmcsx rlhbd kns rjjp dnzmt bdt vrctht cghh hkrz vxnd sdjd zfdfjl xmnn jdmsljx xdpvd rjdqt cgqrb zpgk jhk npgzfv qfzv tpfj jnbq pzpxz mpms blccjb vndnsd pssxd vpzxk dxtx mskn cxnfh lvxr lchcf kjrk jxspzl dzrdddm lbs lskl msth phm vkzc jspkl lrxrmf tvcrkml cfqqmtx hbnf dzkxl dgxrzglk lbdbjhcv rbxklnd pzdz sskg (contains wheat, eggs, shellfish)
 sdjd cvzqq dvkmm msth cxftspv xtkjp rbxklnd jxspzl sjszxk qndq dzrdddm lvxr qjn pssxd jmf lggrq tkrtrr cdvjskn smmxhs zrmddmt npgzfv lchcf rczt bfd tpfj prtnk zqtd fpkq thfdx qfzv xlgpb khcds tjtgbf kgx hbnf mskn mpkpx dknbxb bbbhk zlbcj mrjp kll hdcj sd lskl tvcrkml jzlzc zqzfnn mrt blgvh jqktb tgkgzqj hfffm qjtlsg xsjjq cgqrb chkqhd ppsnc sqqr fbrt dxtx mqcbh vzpntm dfxqfz lxbkzk lshcgz bkgmcsx cgtrfnb rjdqt dgxrzglk zgkg tsrpk dnzmt zfcvkg cghh vpzxk zlshrr kgkjvlrj (contains peanuts)"""
+
+day22 = """Player 1:
+23
+32
+46
+47
+27
+35
+1
+16
+37
+50
+15
+11
+14
+31
+4
+38
+21
+39
+26
+22
+3
+2
+8
+45
+19
+
+Player 2:
+13
+20
+12
+28
+9
+10
+30
+25
+18
+36
+48
+41
+29
+24
+49
+33
+44
+40
+6
+34
+7
+43
+42
+17
+5"""
