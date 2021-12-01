@@ -12676,3 +12676,5 @@ newswsenewswnewswswwsewsww
 swswswswswneswwswswswswswswswswnesewsw
 nwwnwsesenesesweenwnenwwneswwwswwnw
 neneswnenenenenenenenene"""
+
+day25 = "8987316 14681524"
